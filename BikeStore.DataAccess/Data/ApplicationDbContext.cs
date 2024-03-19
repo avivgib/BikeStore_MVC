@@ -1,9 +1,9 @@
-﻿using BikeStoreWeb.Models;
+﻿using BikeStore.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BikeStoreWeb.Data
+namespace BikeStore.DataAccess.Data
 {
-	public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
 	{
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -11,9 +11,11 @@ namespace BikeStoreWeb.Data
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Category>().ToTable("categories", schema: "production");
+			modelBuilder.Entity<Product>().ToTable("products", schema: "production");
 			// Other configurations
 		}
 
