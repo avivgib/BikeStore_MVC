@@ -11,11 +11,11 @@ namespace BikeStore.DataAccess.Data
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Products> Products { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Category>().ToTable("categories", schema: "production");
-			modelBuilder.Entity<Product>().ToTable("products", schema: "production");
+			modelBuilder.Entity<Products>().ToTable("products", schema: "production");
 			// Other configurations
 		}
 

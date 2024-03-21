@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BikeStore.DataAccess.Repository.IRepository
 {
-    public interface IProductRepository : IRepository<Product>
+    public interface IProductRepository : IRepository<Products>
     {
-        void Update(Product obj);
+        void Update(Products obj);
     }
 }

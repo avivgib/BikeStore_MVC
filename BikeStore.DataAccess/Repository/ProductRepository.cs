@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BikeStore.DataAccess.Repository
 {
-    internal class ProductRepository : Repository<Product>, IProductRepository
+    internal class ProductRepository : Repository<Products>, IProductRepository
     {
         private ApplicationDbContext _db;
         public ProductRepository(ApplicationDbContext db) : base(db) 
@@ -17,7 +17,7 @@ namespace BikeStore.DataAccess.Repository
             _db = db;
         }
 
-        public new void Update(Product obj) 
+        public new void Update(Products obj) 
         {
             _db.Products.Update(obj);
         }
