@@ -23,10 +23,11 @@ namespace BikeStore.DataAccess.Repository
             if (objFromDB != null) 
             {
                 obj.product_id = objFromDB.product_id;
-                obj.brand_id = objFromDB.brand_id;
-                obj.list_price = objFromDB.list_price;
-                obj.model_year = objFromDB.model_year;
                 obj.product_name = objFromDB.product_name;
+                obj.brand_id = objFromDB.brand_id;
+                obj.category_id = objFromDB.category_id;
+                obj.model_year = objFromDB.model_year;
+                obj.list_price = objFromDB.list_price;
                 if (obj.ImageUrl != null)
                 {
                     objFromDB.ImageUrl = obj.ImageUrl;
