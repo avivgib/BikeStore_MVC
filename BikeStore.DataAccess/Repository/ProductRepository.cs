@@ -19,7 +19,19 @@ namespace BikeStore.DataAccess.Repository
 
         public new void Update(Products obj) 
         {
-            _db.Products.Update(obj);
+            var objFromDB = _db.Products.FirstOrDefault(u=>u.product_id == obj.product_id);
+            if (objFromDB != null) 
+            {
+                obj.product_id = objFromDB.product_id;
+                obj.brand_id = objFromDB.brand_id;
+                obj.list_price = objFromDB.list_price;
+                obj.model_year = objFromDB.model_year;
+                obj.product_name = objFromDB.product_name;
+                if (obj.ImageUrl != null)
+                {
+                    objFromDB.ImageUrl = obj.ImageUrl;
+                }
+            }
         }
     }
 }
